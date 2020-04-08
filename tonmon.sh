@@ -52,7 +52,7 @@ do_cmd()
 
 run_lite_cmd()
 {
-    do_cmd ${LITECLIENTBIN} -C ${LITECONFIG} -t 30 -v 0 -c "$1" 2> >(cat)
+    do_cmd ${LITECLIENTBIN} -C ${LITECONFIG} -t 30 -v 0 -c "$1"
 }
 
 metric_name()
