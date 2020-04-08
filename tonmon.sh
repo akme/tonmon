@@ -132,7 +132,7 @@ get_elections_state()
 {
     local metric result
     metric="elections_state"
-    result=$(run_lite_cmd "runmethod ${ACTIVE_ELECTION_ID} active_election_id"|grep result|awk {'if($3=="0"){print "0"} else {print "1"}'})
+    result=$(run_lite_cmd "runmethod ${ACTIVE_ELECTION_ID} active_election_id"|grep result\:|awk {'if($3=="0"){print "0"} else {print "1"}'})
     if [ $? -eq 0 ]; then
         print_metric "${metric}" gauge "Elections state" "$result"
     fi
